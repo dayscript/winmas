@@ -57,54 +57,56 @@
                     <div class="col-md-3">
                         <img src="img/logo-win-plus.png" width="195">
                     </div>
-                    <div class="col-md-9">
-                        <div class="row justify-content-md-left" style="margin-left:12px">
-                            <h1 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;"> vive la liga - {{ $conference }}</h1>
-                        </div>
-                        <div class="container mb-20 border-div">
-                                @foreach ($matches as $match)
-                                @if($match->highlight == 1)
-                                <div class="row justify-content-md-center">
-                                    <div class="col col-md-3">
-                                        <img src="/winsports_mas/public/uploads/{{ $match->logo_team_1 }}" heigth="100" width="100">
-                                    </div>
-                                    <div class="col-md-6 justify-content-md-right">
-                                        <h3 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</h3>
-                                        <h4 class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ $match->date }} {{ substr($match->hours,0,-3) }} HS</h4>
-                                    </div>
-                                    <div class="col col-md-3">
-                                        <img src="/winsports_mas/public/uploads/{{ $match->logo_team_2 }}" heigth="100" width="100">
-                                    </div>
-                                </div>
-                                @endif
-                                @endforeach
-                        </div>
-                        <div class="col-md-12 mt-20">
-                            <div class="container">
-                                <div class="row">
+                    @if(isset($matches))
+                        <div class="col-md-9">
+                            <div class="row justify-content-md-left" style="margin-left:12px">
+                                <h1 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;"> vive la liga - {{ $conference }}</h1>
+                            </div>
+                            <div class="container mb-20 border-div">
                                     @foreach ($matches as $match)
-                                    @if($match->highlight != 1)
-                                    <div class="col-md-5" style="margin-left: 39px">
-                                        <div class="row mt-20">
-                                            <div class="col-md-2 justify-content-md-center">
-                                                <img src="/winsports_mas/public/uploads/{{ $match->logo_team_1 }}" width="50px">
-                                            </div>
-                                            <div class="col-md-8 justify-content-md-center">
-                                                <p class="card-text font-source text-center upc-text color-blue-text" style="margin-bottom: -2px">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</p>
-                                                <p class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ $match->date }}</p>
-                                                <p class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ substr($match->hours,0,-3) }} HS</p>
-                                            </div>
-                                            <div class="col-md-2 justify-content-md-center">
-                                                <img src="/winsports_mas/public/uploads/{{ $match->logo_team_2 }}" width="50px">
-                                            </div>
+                                    @if($match->highlight == 1)
+                                    <div class="row justify-content-md-center">
+                                        <div class="col col-md-3">
+                                            <img src="uploads/{{ $match->logo_team_1 }}" heigth="100" width="100">
+                                        </div>
+                                        <div class="col-md-6 justify-content-md-right">
+                                            <h3 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</h3>
+                                            <h4 class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ $match->date }} {{ substr($match->hours,0,-3) }} HS</h4>
+                                        </div>
+                                        <div class="col col-md-3">
+                                            <img src="uploads/{{ $match->logo_team_2 }}" heigth="100" width="100">
                                         </div>
                                     </div>
                                     @endif
                                     @endforeach
+                            </div>
+                            <div class="col-md-12 mt-20">
+                                <div class="container">
+                                    <div class="row">
+                                        @foreach ($matches as $match)
+                                        @if($match->highlight != 1)
+                                        <div class="col-md-5" style="margin-left: 39px">
+                                            <div class="row mt-20">
+                                                <div class="col-md-2 justify-content-md-center">
+                                                    <img src="uploads/{{ $match->logo_team_1 }}" width="50px">
+                                                </div>
+                                                <div class="col-md-8 justify-content-md-center">
+                                                    <p class="card-text font-source text-center upc-text color-blue-text" style="margin-bottom: -2px">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</p>
+                                                    <p class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ $match->date }}</p>
+                                                    <p class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ substr($match->hours,0,-3) }} HS</p>
+                                                </div>
+                                                <div class="col-md-2 justify-content-md-center">
+                                                    <img src="uploads/{{ $match->logo_team_2 }}" width="50px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </header>
@@ -161,7 +163,7 @@
                         </div>
                     </div>
                     <h2 class="mt-4 mb-5">Este video tiene<br> las respuestas que buscas</h2>
-                    {{-- <iframe src='//mdstrm.com/embed/5e00d0d1f6002f0881f86a68' width='100%' height='480' allow='autoplay; fullscreen; encrypted-media' frameborder='0' allowfullscreen allowscriptaccess='always' scrolling='no'></iframe> --}}
+                    <iframe src='//mdstrm.com/embed/5e00d0d1f6002f0881f86a68' width='100%' height='480' allow='autoplay; fullscreen; encrypted-media' frameborder='0' allowfullscreen allowscriptaccess='always' scrolling='no'></iframe>
                 </div>
             </div>
         </div>

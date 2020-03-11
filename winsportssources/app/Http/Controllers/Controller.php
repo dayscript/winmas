@@ -43,10 +43,20 @@ class Controller extends BaseController
             $dia = $dias[($numero_dia)- 1];
             $match->date = $dia. ' ' .$fecha->format('d') . ' de ' . $mes;
         }
-        // if($random > 0)
-        // return view('infografia')->with('matches', $matches);
-        // else
-        return view('video')->with('matches', $matches)->with('conference',$conference->name);
+        if($random > 0){
+            if(isset($matches)){
+                return view('infografia')->with('matches', $matches)->with('conference',$conference->name);
+            }else{
+                return view('infografia');
+            }
+        }
+        else{
+            if(isset($matches)){
+                return view('video')->with('matches', $matches)->with('conference',$conference->name);
+            }else {
+                return view('video');
+            }
+        }
 
     }
 }
