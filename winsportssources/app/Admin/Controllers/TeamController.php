@@ -87,7 +87,7 @@ class TeamController extends AdminController
         $grid->name('Nombre');
         $grid->logo('Logo')->display(function($logo)
         {
-            return '<img src="/winsports_mas/public/uploads/'.$logo.'" heigth="50" width="50" />';
+            return '<img src="../uploads/'.$logo.'" heigth="50" width="50" />';
         });
 
 

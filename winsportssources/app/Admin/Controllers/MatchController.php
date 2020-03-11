@@ -88,8 +88,16 @@ Class MatchController extends AdminController
         $grid->id('ID');
         $grid->date('Fecha');
         $grid->hours('Hora');
-        $grid->team_1_id('Equipo 1');
-        $grid->team_2_id('Equipo 2');
+        $grid->team_1_id('Equipo 1')->display(function($id)
+        {
+            $team = Teams::find($id);
+            return $team->name;
+        });
+        $grid->team_2_id('Equipo 2')->display(function($id)
+        {
+            $team_2 = Teams::find($id);
+            return $team_2->name;
+        });
 
 
         return $grid;
