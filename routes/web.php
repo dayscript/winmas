@@ -10,12 +10,4 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    $random = rand(0,1);
-    if($random > 0)
-    return view('infografia');
-    else
-    return view('video');
-
-});
+Route::get('/','Controller@index')->name('home');
