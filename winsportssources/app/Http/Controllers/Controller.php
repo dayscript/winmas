@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Matches;
 use App\Teams;
+use App\Home;
 use App\Conferences;
 use Carbon\Carbon;
 
@@ -18,12 +19,13 @@ class Controller extends BaseController
     public function index()
     {
         // return \Hash::make(12345);
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        $dias = array("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
+        $random = rand(0,1);
+        $home = Home::where('id',3)->first();
         $matches = Matches::all();
         $teams = Teams::all();
         $conference = Conferences::where('id','>',0)->first();
-        $random = rand(0,1);
-        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        $dias = array("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
 
         foreach($matches as $match){
             foreach($teams as $team){
@@ -43,16 +45,17 @@ class Controller extends BaseController
             $dia = $dias[($numero_dia)- 1];
             $match->date = $dia. ' ' .$fecha->format('d') . ' de ' . $mes;
         }
+
         if($random > 0){
             if(isset($matches)){
-                return view('infografia')->with('matches', $matches)->with('conference',$conference->name);
+                return view('infografia')->with('matches', $matches)->with('conference',$conference->name)->with('home',$home);
             }else{
                 return view('infografia');
             }
         }
         else{
             if(isset($matches)){
-                return view('video')->with('matches', $matches)->with('conference',$conference->name);
+                return view('video')->with('matches', $matches)->with('conference',$conference->name)->with('home',$home);
             }else {
                 return view('video');
             }

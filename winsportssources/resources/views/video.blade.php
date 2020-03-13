@@ -111,9 +111,23 @@
             </div>
         </header>
         <div class="slider">
-            <div><img src="img/Comerciales_WIN_Sports_013.jpg"></div>
-            <div><img src="img/Comerciales_WIN_Sports_018.jpg"></div>
-            <div><img src="img/Comerciales_WIN_Sports_061.jpg"></div>
+            @if(isset($home))
+            {{-- si hay banners cargados al home se muestran --}}
+                  <div><img src="uploads/{{ $home->banner_1 }}"></div>
+                  <div><img src="uploads/{{ $home->banner_2 }}"></div>
+                  <div><img src="uploads/{{ $home->banner_3 }}"></div>
+                  @if(isset($home->banner_4))
+                  <div><img src="uploads/{{ $home->banner_4 }}"></div>
+                  @endif
+                  @if(isset($home->banner_5))
+                  <div><img src="uploads/{{ $home->banner_5 }}"></div>
+                  @endif
+            @else
+            {{-- si no se han cargado se muestran los que estan por defecto --}}
+                 <div><img src="img/Comerciales_WIN_Sports_013.jpg"></div>
+                 <div><img src="img/Comerciales_WIN_Sports_018.jpg"></div>
+                 <div><img src="img/Comerciales_WIN_Sports_061.jpg"></div>
+            @endif
         </div>
         <div class="container">
             <div class="row intro-video">
@@ -192,6 +206,39 @@
         </div>
         <div class="container preguntas mt-5 mb-4">
             <div class="row">
+                @if(isset($home->questions_asigned))
+                {{-- si han cargado preguntas se muestran --}}
+                    @foreach ( $home->questions_asigned as $question )
+                        <div class="col-sm-4 mb-4">
+                            <div class="card card-flip h-100">
+                                <div class="card-front text-white bg-gray">
+                                    <div class="card-body justify-content-center align-self-center text-center">
+                                        <img src="img/que-es.png">
+                                        <h3 class="card-title">{{ $question->question }}</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back bg-blue">
+                                    <div class="card-body justify-content-center align-self-center">
+                                        <img src="img/que-es.png" width="40" class="mb-3">
+                                        <p class="card-text font-source text-center">{{ $question->answer }}</p>
+                                        @if($question->id == 3)
+                                            <div class="text-center">
+                                                <img src="img/claro.png" width="40">
+                                                <img src="img/emcali.png" width="40">
+                                                <img src="img/direct-tv.png" width="40">
+                                                <img src="img/tigo.png" width="40">
+                                                <img src="img/movistar.png" width="40">
+                                                <!-- <img src="img/hv-tv.png" width="40"> -->
+                                                <img src="img/etb.png" width="40">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                {{-- si no han cargado preguntas se muestran las de siempre --}}
                 <div class="col-sm-4 mb-4">
                     <div class="card card-flip h-100">
                         <div class="card-front text-white bg-gray">
@@ -265,38 +312,6 @@
                         </div>
                     </div>
                 </div>
-<!--                 <div class="col-sm-3 mb-4">
-                    <div class="card card-flip h-100">
-                        <div class="card-front text-white bg-gray">
-                            <div class="card-body justify-content-center align-self-center text-center">
-                                <img src="img/cuando.png">
-                                <h3 class="card-title">¿Desde cuándo lo puedo pedir?</h3>
-                            </div>
-                        </div>
-                        <div class="card-back bg-blue">
-                            <div class="card-body justify-content-center align-self-center">
-                                <img src="img/cuando.png" width="40" class="mb-3">
-                                <p class="card-text font-source text-center">Si llamas ya a tu operador, recibirás una gran oferta.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 mb-4">
-                    <div class="card card-flip h-100">
-                        <div class="card-front text-white bg-gray">
-                            <div class="card-body justify-content-center align-self-center text-center">
-                                <img src="img/cuando.png">
-                                <h3 class="card-title">¿Cuándo puedo ver Win Sports Más?</h3>
-                            </div>
-                        </div>
-                        <div class="card-back bg-blue">
-                            <div class="card-body justify-content-center align-self-center">
-                                <img src="img/cuando.png" width="40" class="mb-3">
-                                <p class="card-text font-source text-center">A partir del 20 de enero de 2020.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="col-sm-4 mb-4">
                     <div class="card card-flip h-100">
                         <div class="card-front text-white bg-gray">
@@ -329,6 +344,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <footer class="bg-blue-dark">

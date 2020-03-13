@@ -14,5 +14,6 @@ Route::group([
     $router->resource('equipos', TeamController::class);
     $router->resource('partidos', MatchController::class);
     $router->resource('fechas', ConferenceController::class);
-
+    $router->resource('home', HomeLandigController::class);
+    $router->resource('logo', LogoController::class);
 });
