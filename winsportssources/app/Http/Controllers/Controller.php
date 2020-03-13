@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Matches;
 use App\Teams;
 use App\Home;
+use App\Logos;
 use App\Conferences;
 use Carbon\Carbon;
 
@@ -26,6 +27,12 @@ class Controller extends BaseController
         $matches = Matches::all();
         $teams = Teams::all();
         $conference = Conferences::where('id','>',0)->first();
+        if(isset($home)){
+            foreach($home->questions_asigned as $question){
+                $logo = Logos::find($question->logo);
+                $question->logo = $logo->logo;
+            }
+        }
 
         foreach($matches as $match){
             foreach($teams as $team){

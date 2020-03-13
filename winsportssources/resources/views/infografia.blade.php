@@ -213,13 +213,13 @@
                             <div class="card card-flip h-100">
                                 <div class="card-front text-white bg-gray">
                                     <div class="card-body justify-content-center align-self-center text-center">
-                                        <img src="img/que-es.png">
+                                        <img src="uploads/{{ $question->logo }}">
                                         <h3 class="card-title">{{ $question->question }}</h3>
                                     </div>
                                 </div>
                                 <div class="card-back bg-blue">
                                     <div class="card-body justify-content-center align-self-center">
-                                        <img src="img/que-es.png" width="40" class="mb-3">
+                                        <img src="uploads/{{ $question->logo }}" width="40" class="mb-3">
                                         <p class="card-text font-source text-center">{{ $question->answer }}</p>
                                         @if($question->id == 3)
                                             <div class="text-center">
