@@ -418,6 +418,7 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         'App\\Admin\\Controllers\\ExampleController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ExampleController.php',
         'App\\Admin\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Admin/Controllers/HomeController.php',
         'App\\Admin\\Controllers\\HomeLandigController' => __DIR__ . '/../..' . '/app/Admin/Controllers/HomeLandigController.php',
+        'App\\Admin\\Controllers\\LogoController' => __DIR__ . '/../..' . '/app/Admin/Controllers/LogoController.php',
         'App\\Admin\\Controllers\\MatchController' => __DIR__ . '/../..' . '/app/Admin/Controllers/MatchController.php',
         'App\\Admin\\Controllers\\TeamController' => __DIR__ . '/../..' . '/app/Admin/Controllers/TeamController.php',
         'App\\Conferences' => __DIR__ . '/../..' . '/app/Conferences.php',

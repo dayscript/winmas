@@ -11,6 +11,7 @@ return array(
     'App\\Admin\\Controllers\\ExampleController' => $baseDir . '/app/Admin/Controllers/ExampleController.php',
     'App\\Admin\\Controllers\\HomeController' => $baseDir . '/app/Admin/Controllers/HomeController.php',
     'App\\Admin\\Controllers\\HomeLandigController' => $baseDir . '/app/Admin/Controllers/HomeLandigController.php',
+    'App\\Admin\\Controllers\\LogoController' => $baseDir . '/app/Admin/Controllers/LogoController.php',
     'App\\Admin\\Controllers\\MatchController' => $baseDir . '/app/Admin/Controllers/MatchController.php',
     'App\\Admin\\Controllers\\TeamController' => $baseDir . '/app/Admin/Controllers/TeamController.php',
     'App\\Conferences' => $baseDir . '/app/Conferences.php',

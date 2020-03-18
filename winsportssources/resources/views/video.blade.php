@@ -177,7 +177,7 @@
                         </div>
                     </div>
                     <h2 class="mt-4 mb-5">Este video tiene<br> las respuestas que buscas</h2>
-                    <iframe src='//mdstrm.com/embed/5e00d0d1f6002f0881f86a68' width='100%' height='480' allow='autoplay; fullscreen; encrypted-media' frameborder='0' allowfullscreen allowscriptaccess='always' scrolling='no'></iframe>
+                    <iframe src='{{ $home->video }}' width='100%' height='480' allow='autoplay; fullscreen; encrypted-media' frameborder='0' allowfullscreen allowscriptaccess='always' scrolling='no'></iframe>
                 </div>
             </div>
         </div>
@@ -196,7 +196,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <img src="img/infografia-winsportsmas.jpg">
+                        <img src="uploads/{{ $home->infografia }}">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>

@@ -151,6 +151,8 @@ class HomeLandigController extends AdminController
         $form->image('banner_3','Banner Home 3')->help('Deben ser imagenes con un peso inferior a 350KB')->rules('required');
         $form->image('banner_4','Banner Home 4')->help('Deben ser imagenes con un peso inferior a 350KB');
         $form->image('banner_5','Banner Home 5')->help('Deben ser imagenes con un peso inferior a 350KB');
+        $form->image('infografia','Infografia')->help('Deben ser imagenes con un peso inferior a 350KB');
+        $form->text('video', 'URL Video')->rules('required');
         /* Preguntas del Home */
         $form->hasMany('questions_asigned','Preguntas', function (Form\NestedForm $form) use($logos) {
             $form->text('question', 'Pregunta')->rules('required');

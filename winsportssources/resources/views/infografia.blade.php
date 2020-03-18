@@ -177,7 +177,8 @@
                         </div>
                     </div>
                     <h2 class="mt-5 mb-5">Esta infografía tiene<br> las respuestas que buscas</h2>
-                    <img src="img/infografia-winsportsmas.jpg" class="infografia">
+                    <img src="uploads/{{ $home->infografia }}" class="infografia">
+                    <!-- <img src="img/infografia-winsportsmas.jpg" class="infografia"> -->
                 </div>
             </div>
         </div>
@@ -196,7 +197,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <iframe width="100%" height="480" src="//mdstrm.com/embed/5e00d0d1f6002f0881f86a68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="480" src="{{ $home->video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
