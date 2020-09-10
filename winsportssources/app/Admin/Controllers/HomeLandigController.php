@@ -161,7 +161,7 @@ class HomeLandigController extends AdminController
             $form->textarea('answer', 'Respuesta')->rows(5)->rules('required');
         });
         /* Operadores del Home */
-        $form->hasMany('questions_asigned','Preguntas', function (Form\NestedForm $form) use($logos) {
+        $form->hasMany('operators_asigned','Operadores', function (Form\NestedForm $form) use($logos) {
             $form->text('link', 'Link Desktop')->rules('required');
             $form->text('phone_link', 'Link Mobile')->rules('required');
             $form->text('gtmOutbound', 'gtmOutbound')->rules('required');
