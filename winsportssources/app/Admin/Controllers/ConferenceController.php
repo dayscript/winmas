@@ -82,6 +82,11 @@ class ConferenceController extends AdminController
     {
         $grid = new Grid(new Conferences);
         $grid->model()->orderBy('id','DESC');
+        $grid->disableCreateButton();
+        $grid->actions(function ($actions) {
+            $actions->disableDelete();
+            $actions->disableView();
+        });
 
         $grid->id('ID');
         $grid->name('Nombre');

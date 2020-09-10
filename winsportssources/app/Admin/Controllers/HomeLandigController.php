@@ -83,6 +83,11 @@ class HomeLandigController extends AdminController
     {
         $grid = new Grid(new Home);
         $grid->model()->orderBy('id','DESC');
+        $grid->disableCreateButton();
+        $grid->actions(function ($actions) {
+            $actions->disableDelete();
+            $actions->disableView();
+        });
 
         $grid->id('ID');
         $grid->banner_1('Banner 1')->display(function($logo)
