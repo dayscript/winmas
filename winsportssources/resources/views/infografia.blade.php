@@ -138,7 +138,7 @@
                     @if(isset($home->operators_asigned) && sizeof($home->operators_asigned))
                         <div class="operadores d-none d-md-block">
                             @foreach ($home->operators_asigned as $operatorDesktop)
-                                @if($operatorDesktop == 1)
+                                @if($operatorDesktop->status == 1)
                                     <div class="operador">
                                         <a href="{{ $operatorDesktop->link }}" target="_blank" gtmOutbound="{{ $operatorDesktop->gtmOutbound }}" gtmProvider="{{ $operatorDesktop->gtmProvider }}" gtmDevice="{{ $operatorDesktop->gtmDevice }}"><img src="uploads/{{ $operatorDesktop->logo }}"></a>
                                     </div>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="operadores d-block d-md-none">
                             @foreach ($home->operators_asigned as $operatorDesktop)
-                                @if($operatorDesktop == 1)
+                                @if($operatorDesktop->status == 1)
                                     <div class="operador">
                                         <a href="{{ $operatorDesktop->phone_link }}" target="_blank" gtmOutbound="{{ $operatorDesktop->gtmOutbound }}" gtmProvider="{{ $operatorDesktop->gtmProvider }}" gtmDevice="{{ $operatorDesktop->gtmDeviceMobile }}"><img src="uploads/{{ $operatorDesktop->logo }}"></a>
                                     </div>
