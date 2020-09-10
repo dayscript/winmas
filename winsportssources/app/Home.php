@@ -14,5 +14,9 @@ class Home extends Model
     {
         return $this->hasMany(Questions::class,'home_id');
     }
+    public function operators_asigned()
+    {
+        return $this->hasMany(Operators::class,'home_id');
+    }
 
 }

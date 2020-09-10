@@ -160,6 +160,17 @@ class HomeLandigController extends AdminController
             $form->select('logo', 'Logo')->options($logos)->rules('required');
             $form->textarea('answer', 'Respuesta')->rows(5)->rules('required');
         });
+        /* Operadores del Home */
+        $form->hasMany('questions_asigned','Preguntas', function (Form\NestedForm $form) use($logos) {
+            $form->text('link', 'Link Desktop')->rules('required');
+            $form->text('phone_link', 'Link Mobile')->rules('required');
+            $form->text('gtmOutbound', 'gtmOutbound')->rules('required');
+            $form->text('gtmProvider', 'gtmProvider')->rules('required');
+            $form->text('gtmDevice', 'gtmDevice')->rules('required');
+            $form->text('gtmDeviceMobile', 'gtmDeviceMobile')->rules('required');
+            $form->image('logo', 'Logo')->help('Deben ser imagenes con un peso inferior a 350KB');
+            $form->radio('status','Estado')->options(['0'=>'Inactivo','1'=>'Activo'])->default(1);
+        });
 
         return $form;
     }

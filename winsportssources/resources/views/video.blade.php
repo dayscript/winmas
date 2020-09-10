@@ -60,7 +60,7 @@
                     @if(isset($matches))
                         <div class="col-md-9">
                             <div class="row justify-content-md-left" style="margin-left:12px">
-                                <h1 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;"> vive la liga - {{ $conference }}</h1>
+                                <h1 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;"> {{ $conference }}</h1>
                             </div>
                             <div class="container mb-20 border-div">
                                     @foreach ($matches as $match)
@@ -135,47 +135,67 @@
                     <h2 class="mt-4 mb-3 d-none d-md-block">¡PÍDELO YA!</h2>
                     <h2 class="mt-4 mb-3 d-block d-md-none">¡LLAMA Y PÍDELO YA!</h2>
                     <h2 class="mt-4 mb-3">Haz clic en el logo de tu operador</h2>
-                    <div class="operadores d-none d-md-block">
-                        <div class="operador">
-                            <a href="https://www.directv.com.co/comprar/canales-premium/winplus" target="_blank" gtmOutbound="Link" gtmProvider="Directv" gtmDevice="Desktop"><img src="img/operadores/directv.jpg" ></a>
+                    @if(isset($home->operators_asigned) && sizeof($home->operators_asigned))
+                        <div class="operadores d-none d-md-block">
+                            @foreach ($home->operators_asigned as $operatorDesktop)
+                                @if($operatorDesktop == 1)
+                                    <div class="operador">
+                                        <a href="{{ $operatorDesktop->link }}" target="_blank" gtmOutbound="{{ $operatorDesktop->gtmOutbound }}" gtmProvider="{{ $operatorDesktop->gtmProvider }}" gtmDevice="{{ $operatorDesktop->gtmDevice }}"><img src="uploads/{{ $operatorDesktop->logo }}"></a>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
-                        <div class="operador">
-                            <a href="https://www.claro.com.co/personas/app/solicitudes/solicitud-producto-nv/?prod=television&promo=tvwin&canal_trafico=ORGANICO" target="_blank" gtmOutbound="Link" gtmProvider="Claro" gtmDevice="Desktop"><img src="img/operadores/claro.jpg" ></a>
+                        <div class="operadores d-block d-md-none">
+                            @foreach ($home->operators_asigned as $operatorDesktop)
+                                @if($operatorDesktop == 1)
+                                    <div class="operador">
+                                        <a href="{{ $operatorDesktop->phone_link }}" target="_blank" gtmOutbound="{{ $operatorDesktop->gtmOutbound }}" gtmProvider="{{ $operatorDesktop->gtmProvider }}" gtmDevice="{{ $operatorDesktop->gtmDeviceMobile }}"><img src="uploads/{{ $operatorDesktop->logo }}"></a>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
-                        <div class="operador">
-                            <a href="https://www.movistar.co/television" target="_blank" gtmOutbound="Link" gtmProvider="Movistar" gtmDevice="Desktop"><img src="img/operadores/movistar.jpg" ></a>
+                    @else
+                        <div class="operadores d-none d-md-block">
+                            <div class="operador">
+                                <a href="https://www.directv.com.co/comprar/canales-premium/winplus" target="_blank" gtmOutbound="Link" gtmProvider="Directv" gtmDevice="Desktop"><img src="img/operadores/directv.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="https://www.claro.com.co/personas/app/solicitudes/solicitud-producto-nv/?prod=television&promo=tvwin&canal_trafico=ORGANICO" target="_blank" gtmOutbound="Link" gtmProvider="Claro" gtmDevice="Desktop"><img src="img/operadores/claro.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="https://www.movistar.co/television" target="_blank" gtmOutbound="Link" gtmProvider="Movistar" gtmDevice="Desktop"><img src="img/operadores/movistar.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="https://www.tigo.com.co/servicios/television/winsports" target="_blank" gtmOutbound="Link" gtmProvider="Tigo" gtmDevice="Desktop"><img src="img/operadores/tigo.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="https://etb.com/hogares/adicionales-winsports.aspx" target="_blank" gtmOutbound="Link" gtmProvider="Etb" gtmDevice="Desktop"><img src="img/operadores/etb.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="https://www.emcali.com.co/web/guest" target="_blank" gtmOutbound="Link" gtmProvider="Emcali" gtmDevice="Desktop"><img src="img/operadores/emcali.jpg" ></a>
+                            </div>
                         </div>
-                        <div class="operador">
-                            <a href="https://www.tigo.com.co/servicios/television/winsports" target="_blank" gtmOutbound="Link" gtmProvider="Tigo" gtmDevice="Desktop"><img src="img/operadores/tigo.jpg" ></a>
+                        <div class="operadores d-block d-md-none">
+                            <div class="operador">
+                                <a href="tel:0315185656" gtmOutbound="Link" gtmProvider="Directv" gtmDevice="Mobile"><img src="img/operadores/directv.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="tel:0317500500" gtmOutbound="Link" gtmProvider="Claro" gtmDevice="Mobile"><img src="img/operadores/claro.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="tel:018000911009" gtmOutbound="Link" gtmProvider="Movistar" gtmDevice="Mobile"><img src="img/operadores/movistar.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="tel:0344444141" gtmOutbound="Link" gtmProvider="Tigo" gtmDevice="Mobile"><img src="img/operadores/tigo.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="tel:0313777777" gtmOutbound="Link" gtmProvider="Etb" gtmDevice="Mobile"><img src="img/operadores/etb.jpg" ></a>
+                            </div>
+                            <div class="operador">
+                                <a href="tel:0325240177" gtmOutbound="Link" gtmProvider="Emcali" gtmDevice="Mobile"><img src="img/operadores/emcali.jpg" ></a>
+                            </div>
                         </div>
-                        <div class="operador">
-                            <a href="https://etb.com/hogares/adicionales-winsports.aspx" target="_blank" gtmOutbound="Link" gtmProvider="Etb" gtmDevice="Desktop"><img src="img/operadores/etb.jpg" ></a>
-                        </div>
-                        <div class="operador">
-                            <a href="https://www.emcali.com.co/web/guest" target="_blank" gtmOutbound="Link" gtmProvider="Emcali" gtmDevice="Desktop"><img src="img/operadores/emcali.jpg" ></a>
-                        </div>
-                    </div>
-
-                     <div class="operadores d-block d-md-none">
-                        <div class="operador">
-                            <a href="tel:0315185656" gtmOutbound="Link" gtmProvider="Directv" gtmDevice="Mobile"><img src="img/operadores/directv.jpg" ></a>
-                        </div>
-                        <div class="operador">
-                            <a href="tel:0317500500" gtmOutbound="Link" gtmProvider="Claro" gtmDevice="Mobile"><img src="img/operadores/claro.jpg" ></a>
-                        </div>
-                        <div class="operador">
-                            <a href="tel:018000911009" gtmOutbound="Link" gtmProvider="Movistar" gtmDevice="Mobile"><img src="img/operadores/movistar.jpg" ></a>
-                        </div>
-                        <div class="operador">
-                            <a href="tel:0344444141" gtmOutbound="Link" gtmProvider="Tigo" gtmDevice="Mobile"><img src="img/operadores/tigo.jpg" ></a>
-                        </div>
-                        <div class="operador">
-                            <a href="tel:0313777777" gtmOutbound="Link" gtmProvider="Etb" gtmDevice="Mobile"><img src="img/operadores/etb.jpg" ></a>
-                        </div>
-                        <div class="operador">
-                            <a href="tel:0325240177" gtmOutbound="Link" gtmProvider="Emcali" gtmDevice="Mobile"><img src="img/operadores/emcali.jpg" ></a>
-                        </div>
-                    </div>
+                    @endif
                     <h2 class="mt-4 mb-5">Este video tiene<br> las respuestas que buscas</h2>
                     <iframe src='{{ $home->video }}' width='100%' height='480' allow='autoplay; fullscreen; encrypted-media' frameborder='0' allowfullscreen allowscriptaccess='always' scrolling='no'></iframe>
                 </div>

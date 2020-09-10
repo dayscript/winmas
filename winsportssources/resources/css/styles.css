@@ -227,7 +227,7 @@ footer {
 	position: relative;
 	background: #15FAC2;
 	margin: -3rem 1.8rem 0;
-	max-height: 1700px;
+	/* max-height: 1700px; */
 }
 
 .intro-infografia:after {
