@@ -148,6 +148,5 @@ class Controller extends BaseController
         }else{
             return view('infografia');
         }
-
     }
 }
