@@ -11,3 +11,7 @@
 |
 */
 Route::get('/','Controller@index')->name('home');
+
+Route::get('/video','Controller@index')->name('video');
+
+Route::get('/infografia','Controller@index')->name('infografia');
