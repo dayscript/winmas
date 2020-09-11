@@ -66,14 +66,14 @@
                                     @foreach ($matches as $match)
                                     @if($match->highlight == 1)
                                     <div class="row justify-content-md-center">
-                                        <div class="col col-md-3">
+                                        <div class="col col-md-2">
                                             <img src="uploads/{{ $match->logo_team_1 }}" heigth="100" width="100">
                                         </div>
-                                        <div class="col-md-6 justify-content-md-right">
+                                        <div class="col-md-8 justify-content-md-right">
                                             <h3 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</h3>
                                             <h4 class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ $match->date }} {{ substr($match->hours,0,-3) }} HS</h4>
                                         </div>
-                                        <div class="col col-md-3">
+                                        <div class="col col-md-2">
                                             <img src="uploads/{{ $match->logo_team_2 }}" heigth="100" width="100">
                                         </div>
                                     </div>
