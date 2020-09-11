@@ -63,7 +63,7 @@
                                 <h1 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;"> {{ $conference }}</h1>
                             </div>
                             <div class="container mb-20 border-div">
-                                    @foreach ($matches as $match)
+                                @foreach ($matches as $match)
                                     @if($match->highlight == 1)
                                     <div class="row justify-content-md-center">
                                         <div class="col col-md-2">
@@ -76,9 +76,8 @@
                                         <div class="col col-md-2">
                                             <img src="uploads/{{ $match->logo_team_2 }}" heigth="100" width="100">
                                         </div>
-                                    </div>
                                     @endif
-                                    @endforeach
+                                @endforeach
                             </div>
                             <div class="col-md-12 mt-20">
                                 <div class="container">
