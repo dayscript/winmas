@@ -49,7 +49,7 @@ class Controller extends BaseController
             // dd($fecha->format('n'));
             $mes = $meses[($fecha->format('n')) - 1];
             $numero_dia=date('w', strtotime($fecha));
-            $dia = $dias[($numero_dia)- 1];
+            $dia = $dias[($numero_dia)];
             $match->date = $dia. ' ' .$fecha->format('d') . ' de ' . $mes;
         }
 
@@ -99,7 +99,7 @@ class Controller extends BaseController
             $fecha = Carbon::parse($match->date);
             $mes = $meses[($fecha->format('n')) - 1];
             $numero_dia=date('w', strtotime($fecha));
-            $dia = $dias[($numero_dia)- 1];
+            $dia = $dias[($numero_dia)];
             $match->date = $dia. ' ' .$fecha->format('d') . ' de ' . $mes;
         }
 
@@ -140,7 +140,7 @@ class Controller extends BaseController
             $fecha = Carbon::parse($match->date);
             $mes = $meses[($fecha->format('n')) - 1];
             $numero_dia=date('w', strtotime($fecha));
-            $dia = $dias[($numero_dia)- 1];
+            $dia = $dias[($numero_dia)];
             $match->date = $dia. ' ' .$fecha->format('d') . ' de ' . $mes;
         }
         if(isset($matches)){

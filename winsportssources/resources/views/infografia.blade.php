@@ -54,23 +54,34 @@
         <header>
             <div class="container">
                 <div class="row table-match">
-                    <div class="col-md-3">
+                    <div class="col-md-3 logo-win">
                         <img src="img/logo-win-plus.png" width="195">
                     </div>
                     @if(isset($matches))
                         <div class="col-md-9">
-                            <div class="row justify-content-md-left" style="margin-left:12px">
-                                <h1 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;"> {{ $conference }}</h1>
+                            <div class="row justify-content-md-left title">
+                                <h1 class="color-blue-text text-center upc-text"> {{ $conference }}</h1>
                             </div>
-                            <div class="container mb-20 border-div">
-                                    @foreach ($matches as $match)
-                                    @if($match->highlight == 1)
+                            @foreach ($matches as $match)
+                            @if($match->highlight == 1)
+                            <div class="row d-sm-block d-md-none match">
+                                <div class="col-2">
+                                    <img src="uploads/{{ $match->logo_team_1 }}" width="100%">
+                                </div>
+                                <div class="col-3 p-0">{{ $match->name_team_1 }}</div>
+                                <div class="col-2">VS</div>
+                                <div class="col-3 p-0">{{ $match->name_team_2 }}</div>
+                                <div class="col-2">
+                                    <img src="uploads/{{ $match->logo_team_2 }}" width="100%">
+                                </div>
+                            </div>
+                            <div class="container mb-20 border-div d-none d-md-block">
                                     <div class="row justify-content-md-center">
                                         <div class="col col-md-2">
                                             <img src="uploads/{{ $match->logo_team_1 }}" heigth="100" width="100">
                                         </div>
                                         <div class="col-md-8 justify-content-md-right">
-                                            <h3 class="color-blue-text text-center upc-text" style="margin-bottom: -2px;">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</h3>
+                                            <h3 class="color-blue-text text-center upc-text">{{ $match->name_team_1 }} VS  {{ $match->name_team_2 }}</h3>
                                             <h4 class="card-text font-source text-center upc-text" style="margin-bottom: -2px; color:white;">{{ $match->date }} {{ substr($match->hours,0,-3) }} HS</h4>
                                         </div>
                                         <div class="col col-md-2">

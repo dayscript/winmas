@@ -16,6 +16,12 @@ body {
     padding: 50px;
 }
 
+@media only screen and (max-width: 770px) {
+	.table-match .col-md-12.mt-20 {
+		display: none;
+	}
+}
+
 header {
     /* position: relative; */
     position: absolute;
@@ -311,5 +317,21 @@ footer {
 	.intro-video > div,
 	.intro-infografia > div {
 		padding: 1rem !important;
+	}
+	.logo-win img {
+		width: 100px;
+	}
+	.title h1{
+		font-size: 1.8rem;
+		padding: 2rem 0;
+	}
+	.table-match{
+		margin-top: -4rem;
+	}
+	.match{
+		color: white;
+	    font-weight: 600;
+	    line-height: 1.2em;
+	    text-align: center;
 	}
 }
