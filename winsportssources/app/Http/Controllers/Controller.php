@@ -21,7 +21,7 @@ class Controller extends BaseController
     {
         // return \Hash::make(12345);
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        $dias = array("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
+        $dias = array("","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
         $random = rand(0,1);
         $home = Home::where('id',3)->first();
         $matches = Matches::all();
@@ -72,7 +72,7 @@ class Controller extends BaseController
     public function videoLanding()
     {
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        $dias = array("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
+        $dias = array("","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
         $random = rand(0,1);
         $home = Home::where('id',3)->first();
         $matches = Matches::all();
@@ -113,7 +113,7 @@ class Controller extends BaseController
     public function infografiaLanding()
     {
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        $dias = array("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
+        $dias = array("","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","domingo");
         $random = rand(0,1);
         $home = Home::where('id',3)->first();
         $matches = Matches::all();
