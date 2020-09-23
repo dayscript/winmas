@@ -19,10 +19,10 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '4e8671d7be9056dcd04ddd9e8e15f9cc' => __DIR__ . '/..' . '/encore/laravel-admin/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
-        '4e8671d7be9056dcd04ddd9e8e15f9cc' => __DIR__ . '/..' . '/encore/laravel-admin/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -117,6 +117,7 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         ),
         'E' => 
         array (
+            'Encore\\CKEditor\\' => 16,
             'Encore\\Admin\\' => 13,
             'Egulias\\EmailValidator\\' => 23,
         ),
@@ -337,6 +338,10 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Encore\\CKEditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src',
+        ),
         'Encore\\Admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/encore/laravel-admin/src',
@@ -441,6 +446,7 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Logos' => __DIR__ . '/../..' . '/app/Logos.php',
         'App\\Matches' => __DIR__ . '/../..' . '/app/Matches.php',
+        'App\\Operators' => __DIR__ . '/../..' . '/app/Operators.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1169,6 +1175,9 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         'Encore\\Admin\\Widgets\\Tab' => __DIR__ . '/..' . '/encore/laravel-admin/src/Widgets/Tab.php',
         'Encore\\Admin\\Widgets\\Table' => __DIR__ . '/..' . '/encore/laravel-admin/src/Widgets/Table.php',
         'Encore\\Admin\\Widgets\\Widget' => __DIR__ . '/..' . '/encore/laravel-admin/src/Widgets/Widget.php',
+        'Encore\\CKEditor\\CKEditor' => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src/CKEditor.php',
+        'Encore\\CKEditor\\CKEditorServiceProvider' => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src/CKEditorServiceProvider.php',
+        'Encore\\CKEditor\\Editor' => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src/Editor.php',
         'Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Ean.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',

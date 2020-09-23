@@ -149,4 +149,14 @@ class Controller extends BaseController
             return view('infografia');
         }
     }
+    public function tyc()
+    {
+        $home = Home::where('id',3)->first();
+        if(isset($home->tyc)){
+            return view('tyc')->with('tyc', $home->tyc);
+        }else{
+            return view('tyc');
+        }
+    }
+
 }

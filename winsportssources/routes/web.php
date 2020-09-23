@@ -15,3 +15,5 @@ Route::get('/','Controller@index')->name('home');
 Route::get('/video','Controller@videoLanding')->name('video');
 
 Route::get('/infografia','Controller@infografiaLanding')->name('infografia');
+
+Route::get('/tyc','Controller@tyc')->name('tyc');

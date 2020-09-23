@@ -176,6 +176,7 @@ class HomeLandigController extends AdminController
             $form->image('logo', 'Logo')->help('Deben ser imagenes con un peso inferior a 350KB');
             $form->radio('status','Estado')->options(['0'=>'Inactivo','1'=>'Activo'])->default(1);
         });
+        $form->ckeditor('tyc','Términos y Condiciones');
 
         return $form;
     }

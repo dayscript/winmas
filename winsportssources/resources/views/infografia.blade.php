@@ -389,6 +389,7 @@
                     </div>
                     <div class="col-md-6 mt-3 font-source text-white text-right">
                         <p>Copyright &copy; 2019, WINSPORTS Bogotá - Colombia. Todos los derechos reservados.</p>
+                        <p><a href="{{route('/tyc')}}">Términos y Condiciones</a></p>
                     </div>
                 </div>
             </div>
