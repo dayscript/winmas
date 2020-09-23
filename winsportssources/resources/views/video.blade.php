@@ -36,6 +36,7 @@
     <link href="https://fonts.googleapis.com/css?family=Passion+One:400,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css?v=5">
+    <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
     <script type="text/javascript">
         $(document).ready(function() {
             $('.slider').slick({
@@ -74,6 +75,7 @@
                                 <div class="col-2">
                                     <img src="uploads/{{ $match->logo_team_2 }}" width="100%">
                                 </div>
+                                <div class="py-2 col text-center">{{ $match->date }} {{ substr($match->hours,0,-3) }} HS</div>
                             </div>
                             <div class="container mb-20 border-div d-none d-md-block">
                                     <div class="row justify-content-md-center">
