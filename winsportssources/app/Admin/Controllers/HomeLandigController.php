@@ -178,6 +178,7 @@ class HomeLandigController extends AdminController
         });
         $form->ckeditor('tyc','Términos y Condiciones');
 
+
         return $form;
     }
 }

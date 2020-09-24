@@ -117,6 +117,7 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         ),
         'E' => 
         array (
+            'Encore\\Summernote\\' => 18,
             'Encore\\CKEditor\\' => 16,
             'Encore\\Admin\\' => 13,
             'Egulias\\EmailValidator\\' => 23,
@@ -337,6 +338,10 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Encore\\Summernote\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel-admin-ext/summernote/src',
         ),
         'Encore\\CKEditor\\' => 
         array (
@@ -1178,6 +1183,9 @@ class ComposerStaticInitf58a08d2ea9c28809894b847614359da
         'Encore\\CKEditor\\CKEditor' => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src/CKEditor.php',
         'Encore\\CKEditor\\CKEditorServiceProvider' => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src/CKEditorServiceProvider.php',
         'Encore\\CKEditor\\Editor' => __DIR__ . '/..' . '/laravel-admin-ext/ckeditor/src/Editor.php',
+        'Encore\\Summernote\\Editor' => __DIR__ . '/..' . '/laravel-admin-ext/summernote/src/Editor.php',
+        'Encore\\Summernote\\Summernote' => __DIR__ . '/..' . '/laravel-admin-ext/summernote/src/Summernote.php',
+        'Encore\\Summernote\\SummernoteServiceProvider' => __DIR__ . '/..' . '/laravel-admin-ext/summernote/src/SummernoteServiceProvider.php',
         'Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Ean.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',

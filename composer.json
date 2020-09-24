@@ -1,0 +1,5 @@
+{
+    "require": {
+        "laravel-admin-ext/ckeditor": "^1.0"
+    }
+}
